@@ -19,7 +19,7 @@ app.use('/*', (req,res,next)=> {
 
 app.listen(3000, () => {
     console.log("Server started at 3000 port")
-    mongoose.connect('mongodb+srv://dhruvsonani:5dYA6Xfubw1kqiTo@cluster0.qhxovmz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+    mongoose.connect(`${process.env.MONGODB_URL}`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => {
