@@ -5,6 +5,17 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const productRoutes = require('./routes/productRoute');
 
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader(
+      'Access-Control-Allow-Headers',
+      'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+    );
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE, PUT');
+  
+    next();
+  });
+
 app.use(express.json());
 
 app.get('/',(req,res,next) => {
