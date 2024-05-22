@@ -33,6 +33,16 @@ const getAllProducts = async (req,res,next) => {
     }
 }
 
+const getAllProductsWithoutPagination = async (req,res,next) => {
+    const products = await Product.find()
+    if(!products){
+        return res.json({error: 'No products found!', products: []})
+    }
+    else{
+        return res.json({status: 200, products: products})
+    }
+}
+
 const getProductsByMonth = async (req,res,next) => {
     const enteredMonth = req.query.month;
     let page = parseInt(req.query.page) || 1;
