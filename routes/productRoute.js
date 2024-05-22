@@ -6,7 +6,7 @@ router.get('/', (req,res,next) => {
     res.json({message: 'This is products API', getAllProducts: 'Go to /get-all-products to get all products'})
 })
 
-router.get('get-all',productController.getAllProductsWithoutPagination);
+router.get('/get-all',productController.getAllProductsWithoutPagination);
 router.get('/get-all-products', productController.getAllProducts);
 router.get('/save-products-to-DB',productController.saveProductstoDB);
 router.get('/search',productController.getSearchedProduct);
