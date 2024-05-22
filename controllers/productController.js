@@ -182,3 +182,4 @@ exports.getStatistics = getStatistics;
 exports.getBarChartData = getBarChartData;
 exports.getPieChartData = getPieChartData;
 exports.combinedResults = combinedResults;
+exports.getAllProductsWithoutPagination = getAllProductsWithoutPagination;
